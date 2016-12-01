@@ -1,2 +1,2 @@
-# Lshop
+# lshop
 Curatorial project -  online store
