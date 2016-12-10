@@ -5,10 +5,158 @@
 
 html {
     height: 100%;
+    background-color: #efefef;
 }
 
-.home {
-    background-color: coral;
-    width: 100px;
-    height: 100px;
+.header {
+    background-color: burlywood;
+    width: 1170px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.button {
+    position: relative;
+    font-family: cursive;
+    width: 150px;
+    height: 40px;
+    margin: 10px;
+    float: right;
+    border: none;
+    border-radius: 2px;
+}
+
+.signup-button {
+    background-color: cornflowerblue;
+}
+
+.signin-button {
+    background-color: darkgoldenrod;
+    margin-right: 0;
+}
+
+.signin-input {
+    padding-left: 10px;
+}
+
+.content-wrapper {
+    height: 100%;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+}
+
+.categories-wrapper {
+    height: 745px;
+    width: 345px;
+    float: left;
+    padding: 15px 0px 15px 15px;
+}
+
+.categories {
+    height: 730px;
+    width: 345px;
+    background-color: antiquewhite;
+}
+
+.products-wrapper {
+    height: 745px;
+    width: 810px;
+    float: right;
+    padding: 15px;
+}
+
+.products {
+    height: 730px;
+    width: 810px;
+    overflow-y: auto;
+    background-color: antiquewhite;
+}
+
+.label {
+    text-align: center;
+    float: left;
+    background-color: lavender;
+}
+
+.label-name {
+    width: 160px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px outset #000;
+}
+
+.label-description {
+    width: 550px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px black;
+    border-top: 1px outset black;
+    border-bottom: 1px outset black;
+}
+
+.label-price {
+    width: 96px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px outset #000;
+}
+
+.product {
+    pudding:0 auto;
+    text-align: center;
+    float: left;
+    background-color: lightgrey;
+}
+
+.product-checkbox-border {
+    border-left: 1px outset #000;
+    border-right: 1px outset #000;
+    border-bottom: 1px outset #000;
+}
+
+.product-checkbox {
+    width: 30px;
+    height: 50px;
+}
+
+.product-name {
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    border-left: 1px outset #000;
+    border-bottom: 1px outset #000;
+}
+
+.product-description {
+    width: 550px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px black;
+    border-left: 1px outset #000;
+    border-right: 1px outset #000;
+    border-bottom: 1px outset #000;
+}
+
+.product-price {
+    width: 96px;
+    height: 50px;
+    line-height: 50px;
+    border-right: 1px outset #000;
+    border-bottom: 1px outset #000;
+}
+
+.basket-button {
+    background-color: cornflowerblue;
+    height: 70px;
+    width: 70px;
+    float: right;
+    bottom: 105px;
+    right: 5px;
+    margin: 15px;
+    border-radius: 30px;
 }
