@@ -5,7 +5,7 @@
 </head>
     <body>
         <div>
-            Sign in
+            Sign in page
         </div>
     </body>
 </html>

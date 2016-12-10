@@ -5,7 +5,7 @@
 </head>
     <body>
         <div>
-            Basket
+            Basket page
         </div>
     </body>
 </html>

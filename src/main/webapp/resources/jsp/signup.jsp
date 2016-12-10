@@ -6,7 +6,7 @@
     </head>
     <body>
         <div>
-          Sign up
+          Sign up page
         </div>
     </body>
 </html>
