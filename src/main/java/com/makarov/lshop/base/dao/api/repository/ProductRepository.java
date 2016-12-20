@@ -6,4 +6,8 @@ import org.springframework.data.repository.CrudRepository;
 import java.math.BigInteger;
 
 public interface ProductRepository extends CrudRepository<ProductEntity, BigInteger> {
+
+    ProductEntity findById(Long id);
+
+    Iterable<ProductEntity> findByCategory(String category);
 }

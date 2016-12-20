@@ -6,7 +6,6 @@ import com.makarov.lshop.base.dao.api.repository.ProductRepository;
 import com.makarov.lshop.base.dao.api.repository.ProfileRepository;
 import com.makarov.lshop.base.model.ProductEntity;
 import com.makarov.lshop.base.model.ProfileEntity;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,5 +33,15 @@ public class DAOImpl implements DAO {
     @Override
     public List<ProductEntity> getProducts() {
         return Lists.newArrayList(productRepository.findAll());
+    }
+
+    @Override
+    public ProductEntity findById(Long id) {
+        return productRepository.findById(id);
+    }
+
+    @Override
+    public List<ProductEntity> findByCategory(String category) {
+        return Lists.newArrayList(productRepository.findByCategory(category));
     }
 }

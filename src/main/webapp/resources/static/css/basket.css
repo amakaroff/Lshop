@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    background-color: #efefef;
+}
+
+.content-wrapper {
+    height: 100%;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.products-wrapper {
+    height: 740px;
+    width: 810px;
+    margin-top: 20px;
+    float: left;
+}
+
+.products {
+    height: 730px;
+    width: 810px;
+    overflow-y: auto;
+    background-color: antiquewhite;
+}
+
+.functional {
+    height: 155px;
+    width: 180px;
+    float: right;
+    margin-top: 20px;
+    background-color: antiquewhite;
+}
+
+.categories-label {
+    height: 70px;
+    width: 170px;
+}
+
+.categories-button {
+    background-color: cornflowerblue;
+    font-family: cursive;
+    font-size: medium;
+    width: 150px;
+    height: 42px;
+    margin: 18px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+}
+
+.label {
+    text-align: center;
+    float: left;
+    background-color: lavender;
+}
+
+.label-name {
+    width: 160px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px outset #000;
+}
+
+.label-description {
+    width: 550px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px black;
+    border-top: 1px outset black;
+    border-bottom: 1px outset black;
+}
+
+.label-price {
+    width: 96px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px outset #000;
+}
+
+.product {
+    pudding: 0 auto;
+    text-align: center;
+    float: left;
+    background-color: bisque;
+}
+
+.product-button {
+    background-color: cornflowerblue;
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+    float: left;
+    border-radius: 30px;
+    border: none;
+}
+
+.product-name {
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    border-left: 1px outset #000;
+    border-bottom: 1px outset #000;
+}
+
+.product-description {
+    width: 550px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px black;
+    border-left: 1px outset #000;
+    border-right: 1px outset #000;
+    border-bottom: 1px outset #000;
+}
+
+.product-price {
+    width: 96px;
+    height: 50px;
+    line-height: 50px;
+    border-right: 1px outset #000;
+    border-bottom: 1px outset #000;
+}

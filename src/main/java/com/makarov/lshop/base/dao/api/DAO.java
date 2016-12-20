@@ -12,4 +12,8 @@ public interface DAO {
     void saveProfile(ProfileEntity profile);
 
     List<ProductEntity> getProducts();
+
+    ProductEntity findById(Long id);
+
+    List<ProductEntity> findByCategory(String category);
 }

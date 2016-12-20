@@ -15,6 +15,16 @@ html {
     margin: 0 auto;
 }
 
+.logo {
+    width: 155px;
+    height: 30px;
+    padding: 10px 10px 10px 15px;
+    font-style: normal;
+    font-size: 200%;
+    float: left;
+    font-weight: lighter;
+}
+
 .button {
     position: relative;
     font-family: cursive;
@@ -40,41 +50,58 @@ html {
 }
 
 .content-wrapper {
-    height: 100%;
+    height: 625px;
     width: 1200px;
     margin: 0 auto;
 }
 
 .content {
-    height: 100%;
+    height: 625px;
     width: 100%;
 }
 
 .categories-wrapper {
-    height: 745px;
-    width: 345px;
+    height: 625px;
+    width: 325px;
     float: left;
     padding: 15px 0px 15px 15px;
 }
 
 .categories {
-    height: 730px;
-    width: 345px;
+    height: 305px;
+    width: 325px;
     background-color: antiquewhite;
 }
 
+.categories-label {
+    height: 70px;
+    width: 325px;
+}
+
+.categories-button {
+    background-color: cornflowerblue;
+    font-family: cursive;
+    font-size: medium;
+    width: 280px;
+    height: 49px;
+    margin: 21px;
+    text-align: center;
+    border: none;
+}
+
 .products-wrapper {
-    height: 745px;
-    width: 810px;
+    height: 625px;
+    width: 830px;
     float: right;
     padding: 15px;
 }
 
 .products {
-    height: 730px;
+    height: 650px;
     width: 810px;
     overflow-y: auto;
     background-color: antiquewhite;
+    padding: 10px;
 }
 
 .label {
@@ -106,22 +133,20 @@ html {
     border: 1px outset #000;
 }
 
+.label-price-button {
+    width: 88px;
+    height: 22px;
+    line-height: 22px;
+    border: none;
+    margin: 4px;
+    background-color: cornflowerblue;
+}
+
 .product {
-    pudding:0 auto;
+    pudding: 0 auto;
     text-align: center;
     float: left;
-    background-color: lightgrey;
-}
-
-.product-checkbox-border {
-    border-left: 1px outset #000;
-    border-right: 1px outset #000;
-    border-bottom: 1px outset #000;
-}
-
-.product-checkbox {
-    width: 30px;
-    height: 50px;
+    background-color: bisque;
 }
 
 .product-name {
@@ -130,6 +155,16 @@ html {
     line-height: 50px;
     border-left: 1px outset #000;
     border-bottom: 1px outset #000;
+}
+
+.product-button {
+    background-color: cornflowerblue;
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+    float: left;
+    border-radius: 30px;
+    border: none;
 }
 
 .product-description {
