@@ -1,7 +1,8 @@
 package com.makarov.lshop.base.model;
 
+import com.makarov.lshop.base.model.converter.PriceConverter;
+
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Entity
 @Table(name = "products")
@@ -18,15 +19,17 @@ public class ProductEntity {
     @Column(name = "description")
     private String description;
 
-    //photo
+    @Column(name = "photo")
+    private String urlPhoto;
 
+    @Convert(converter = PriceConverter.class)
     @Column(name = "price")
-    private BigDecimal price;
+    private String price;
 
     @Column(name = "category")
     private String category;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "profile_id")
     private ProfileEntity profile;
 
@@ -57,11 +60,11 @@ public class ProductEntity {
         this.description = description;
     }
 
-    public BigDecimal getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -71,6 +74,22 @@ public class ProductEntity {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getUrlPhoto() {
+        return urlPhoto;
+    }
+
+    public void setUrlPhoto(String urlPhoto) {
+        this.urlPhoto = urlPhoto;
+    }
+
+    public ProfileEntity getProfile() {
+        return profile;
+    }
+
+    public void setProfile(ProfileEntity profile) {
+        this.profile = profile;
     }
 
     @Override

@@ -21,6 +21,9 @@ public class ProfileEntity {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "photo")
+    private String urlPhoto;
+
     @Column(name = "phone")
     private String phone;
 
@@ -81,11 +84,38 @@ public class ProfileEntity {
         this.mail = mail;
     }
 
+    public String getUrlPhoto() {
+        return urlPhoto;
+    }
+
+    public void setUrlPhoto(String urlPhoto) {
+        this.urlPhoto = urlPhoto;
+    }
+
     public List<ProductEntity> getProducts() {
         return products;
     }
 
     public void setProducts(List<ProductEntity> products) {
         this.products = products;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ProfileEntity that = (ProfileEntity) o;
+
+        if (login != null ? !login.equals(that.login) : that.login != null) return false;
+        return !(password != null ? !password.equals(that.password) : that.password != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = login != null ? login.hashCode() : 0;
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        return result;
     }
 }

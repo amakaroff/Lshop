@@ -7,3 +7,127 @@ html {
     height: 100%;
     background-color: #efefef;
 }
+
+.product {
+    height: 100%;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.photo {
+    width: 400px;
+    height: 390px;
+    background-color: bisque;
+    margin-top: 10px;
+    margin-left: 48px;
+    float: left;
+    padding: 10px;
+}
+
+.frame {
+    width: 400px;
+    height: 400px;
+}
+
+.info {
+    width: 480px;
+    height: 540px;
+    background-color: bisque;
+    margin: 10px;
+    position: relative;
+    float: right;
+    padding: 10px;
+}
+
+.info-label {
+    width: 300px;
+    height: 50px;
+    float: left;
+}
+
+.info-field-name {
+    width: 300px;
+    height: 50px;
+    float: left;
+    font-size: 120%;
+    line-height: 45px;
+    text-indent: 35px;
+    background-color: antiquewhite;
+}
+
+.info-field-description {
+    width: 480px;
+    height: 390px;
+    position: absolute;
+    top: 70px;
+    font-size: 120%;
+    text-indent: 20px;
+    background-color: antiquewhite;
+}
+
+.info-field-description-inside {
+    width: 450px;
+    height: 370px;
+    margin: 15px;
+    word-wrap: break-word;
+}
+
+.info-field-price {
+    width: 170px;
+    height: 50px;
+    float: right;
+    font-size: 120%;
+    text-align: center;
+    line-height: 50px;
+    background-color: antiquewhite;
+}
+
+.label-button {
+    background-color: antiquewhite;
+    height: 72px;
+    width: 200px;
+    margin: 15px;
+    position: absolute;
+    right: 101px;
+    bottom: 0px;
+    font-size: 150%;
+    text-align: center;
+    line-height: 65px;
+    font-family: cursive;
+    border-radius: 10px;
+}
+
+.add-button {
+    background-color: cornflowerblue;
+    height: 70px;
+    width: 70px;
+    float: right;
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    border: none;
+    margin: 15px;
+    font-size: 200%;
+    border-radius: 35px;
+}
+
+.seller-info {
+    width: 420px;
+    height: 140px;
+    margin-top: 10px;
+    margin-left: 48px;
+    background-color: bisque;
+    float: left;
+}
+
+.seller-info-button {
+    width: 300px;
+    height: 70px;
+    margin-left: 60px;
+    margin-top: 30px;
+    font-family: cursive;
+    font-size: 180%;
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 3px;
+}

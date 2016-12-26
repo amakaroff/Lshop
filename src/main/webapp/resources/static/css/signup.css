@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    background-color: #efefef;
+}
+
+.content {
+    width: 300px;
+    height: 86%;
+    margin: 0 auto;
+}
+
+.title {
+    width: 150px;
+    height: 70px;
+    font-family: cursive;
+    font-size: 200%;
+    margin-left: 130px;
+    line-height: 100px;
+    margin-bottom: 20px;
+}
+
+.input-zone {
+    width: 400px;
+    height: 550px;
+    margin-top: 60px;
+    background-color: bisque;
+}
+
+.label {
+    width: 350px;
+    height: 30px;
+    font-size: 130%;
+    float: left;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    font-family: cursive;
+}
+
+.label-error {
+    width: 400px;
+    height: 40px;
+    color: crimson;
+    font-family: cursive;
+    font-size: 120%;
+    text-align: center;
+}
+
+.input {
+    width: 200px;
+    height: 40px;
+    font-size: 110%;
+    float: right;
+    margin-bottom: 15px;
+}
+
+.complete-button {
+    width: 130px;
+    height: 40px;
+    background-color: cornflowerblue;
+    font-family: cursive;
+    font-size: 120%;
+    border: none;
+    margin-left: 130px;
+}

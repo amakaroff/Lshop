@@ -15,16 +15,18 @@ html {
 }
 
 .products-wrapper {
-    height: 740px;
-    width: 810px;
-    margin-top: 20px;
+    height: 730px;
+    width: 800px;
     float: left;
+    padding: 10px;
 }
 
 .products {
-    height: 730px;
-    width: 810px;
+    height: 620px;
+    width: 770px;
     overflow-y: auto;
+    margin-top: 10px;
+    padding: 10px;
     background-color: antiquewhite;
 }
 
@@ -32,13 +34,41 @@ html {
     height: 155px;
     width: 180px;
     float: right;
-    margin-top: 20px;
+    margin-top: 19px;
     background-color: antiquewhite;
 }
 
 .categories-label {
     height: 70px;
     width: 170px;
+}
+
+.error-label {
+    position: absolute;
+    z-index: 9999;
+    right: 600px;
+    top: 200px;
+    width: 640px;
+    height: 170px;
+    background-color: burlywood;
+    font-size: 200%;
+    border-style: outset;
+    text-align: center;
+    line-height: 50px;
+}
+
+.error-label-button {
+    background-color: coral;
+    position: absolute;
+    font-family: cursive;
+    font-size: medium;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    right: 250px;
+    border: none;
+    bottom: 10px;
+    border-radius: 5px;
 }
 
 .categories-button {
@@ -50,7 +80,7 @@ html {
     margin: 18px;
     text-align: center;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .label {
@@ -60,14 +90,14 @@ html {
 }
 
 .label-name {
-    width: 160px;
+    width: 180px;
     height: 30px;
     line-height: 30px;
     border: 1px outset #000;
 }
 
 .label-description {
-    width: 550px;
+    width: 470px;
     height: 30px;
     line-height: 30px;
     border: 1px black;
@@ -99,18 +129,30 @@ html {
     border: none;
 }
 
+.product-button-false {
+    background-color: crimson;
+}
+
 .product-name {
-    width: 160px;
+    width: 180px;
     height: 50px;
+    text-indent: -10px;
     line-height: 50px;
     border-left: 1px outset #000;
     border-bottom: 1px outset #000;
 }
 
+.product-name-name {
+    width: 130px;
+    height: 50px;
+    float: right;
+}
+
 .product-description {
-    width: 550px;
+    width: 470px;
     height: 50px;
     line-height: 50px;
+    text-indent: 5px;
     border: 1px black;
     border-left: 1px outset #000;
     border-right: 1px outset #000;

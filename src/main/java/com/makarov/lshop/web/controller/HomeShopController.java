@@ -1,6 +1,7 @@
 package com.makarov.lshop.web.controller;
 
-import com.makarov.lshop.base.cache.impl.ProductsCache;
+import com.google.common.base.Predicate;
+import com.google.common.collect.FluentIterable;
 import com.makarov.lshop.base.component.Basket;
 import com.makarov.lshop.base.dao.api.DAO;
 import com.makarov.lshop.base.model.ProductEntity;
@@ -19,45 +20,76 @@ import java.util.List;
 public class HomeShopController {
 
     @Autowired
-    private ProductsCache cache;
-
-    @Autowired
     private DAO dao;
 
     @Autowired
     private Basket basket;
 
+    private boolean isError = false;
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index(ModelMap model) {
-        model.addAttribute("profileEntity", new ProfileEntity());
-        List<ProductEntity> list = cache.getCurrentProducts();
-        list.removeAll(basket.getBasketProducts());
-        model.addAttribute("products", list);
-        model.addAttribute("basketProduct", new ProductEntity());
+    public String index(HttpServletRequest request, ModelMap model) {
+        String category = request.getParameter("category");
+        boolean sortIsNeeded = "do".equals(request.getParameter("sort"));
+
+        List<ProductEntity> categoryProducts = dao.getProducts(category, sortIsNeeded);
+        model.addAttribute("products", FluentIterable
+                .from(categoryProducts)
+                .filter(new Predicate<ProductEntity>() {
+                    @Override
+                    public boolean apply(ProductEntity productEntity) {
+                        return !basket.getBasketProducts().contains(productEntity);
+                    }
+                })
+                .toList());
+
+        model.addAttribute("selectCategory", category);
+        model.addAttribute("selectProfile", basket.getProfile());
+        model.addAttribute("isLogin", basket.isLogin());
+        model.addAttribute("error", isError);
+        isError = false;
+        if (!basket.isLogin()) {
+            model.addAttribute("profileEntity", new ProfileEntity());
+        }
         return "index";
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    public String logout(ModelMap model) {
+        basket.getBasketProducts().clear();
+        basket.setIsLogin(false);
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public String signIn(@ModelAttribute("profileEntity") ProfileEntity profile, ModelMap model) {
-        return "redirect:/profile";
+        ProfileEntity profileEntity = dao.getProfile(profile.getLogin());
+
+        if (profileEntity != null && profileEntity.getPassword().equals(profile.getPassword())) {
+            basket.setIsLogin(true);
+            basket.setProfile(profileEntity);
+            basket.getBasketProducts().clear();
+            return "redirect:/id" + profileEntity.getId();
+        } else {
+            isError = true;
+            return "redirect:/";
+        }
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addProduct(HttpServletRequest request, ModelMap model) {
         ProductEntity productEntity = dao.findById(Long.parseLong(request.getParameter("id")));
-        basket.getBasketProducts().add(productEntity);
-        return "redirect:/";
-    }
 
-    @RequestMapping(value = "/sort", method = RequestMethod.POST)
-    public String sortProducts(ModelMap model) {
-        cache.sortByPrice();
-        return "redirect:/";
-    }
+        if (dao.getProducts(null, false).contains(productEntity)) {
+            basket.getBasketProducts().add(productEntity);
+        }
 
-    @RequestMapping(value = "/category", method = RequestMethod.POST)
-    public String getByCategory(HttpServletRequest request, ModelMap model) {
-        cache.setCategory(request.getParameter("category"));
-        return "redirect:/";
+        String category = request.getParameter("selectCategory");
+
+        if ("".equals(category) || category == null) {
+            category = "All";
+        }
+
+        return "redirect:/?category=" + category;
     }
 }

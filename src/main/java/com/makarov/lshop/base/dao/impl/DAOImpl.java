@@ -20,9 +20,16 @@ public class DAOImpl implements DAO {
     @Autowired
     private ProductRepository productRepository;
 
+    private boolean isSorted = false;
+
     @Override
     public ProfileEntity getProfile(String login) {
         return profileRepository.findByLogin(login);
+    }
+
+    @Override
+    public ProfileEntity getProfile(Long id) {
+        return profileRepository.findOne(id);
     }
 
     @Override
@@ -31,17 +38,53 @@ public class DAOImpl implements DAO {
     }
 
     @Override
-    public List<ProductEntity> getProducts() {
-        return Lists.newArrayList(productRepository.findAll());
+    public List<ProductEntity> getProducts(String category, boolean doSorted) {
+        if (category != null && !category.equals("All")) {
+            if (doSorted) {
+                if (isSorted) {
+                    isSorted = false;
+                    return productRepository.findByCategoryOrderByPriceAsc(category);
+                } else {
+                    isSorted = true;
+                    return productRepository.findByCategoryOrderByPriceDesc(category);
+                }
+            } else {
+                return productRepository.findByCategory(category);
+            }
+        } else {
+            if (doSorted) {
+                if (isSorted) {
+                    isSorted = false;
+                    return productRepository.findAllByOrderByPriceAsc();
+                } else {
+                    isSorted = true;
+                    return productRepository.findAllByOrderByPriceDesc();
+                }
+            } else {
+                return Lists.newArrayList(productRepository.findAll());
+            }
+        }
     }
 
     @Override
     public ProductEntity findById(Long id) {
-        return productRepository.findById(id);
+        return productRepository.findOne(id);
     }
 
     @Override
-    public List<ProductEntity> findByCategory(String category) {
-        return Lists.newArrayList(productRepository.findByCategory(category));
+    public void deleteProducts(List<ProductEntity> products) {
+        for (ProductEntity product : products) {
+            productRepository.delete(product);
+        }
+    }
+
+    @Override
+    public List<ProfileEntity> findByProfileId(Long id) {
+        return productRepository.findByProfile_Id(id);
+    }
+
+    @Override
+    public void saveProduct(ProductEntity product) {
+        productRepository.save(product);
     }
 }

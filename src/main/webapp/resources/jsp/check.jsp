@@ -2,9 +2,10 @@
 <html>
 <head>
     <title></title>
+    <link rel="shortcut icon" href="../../resources/static/image/favicon.png"/>
 </head>
 <body>
-<iframe id="iframe" class="iframe"
+<iframe id="frame" class="frame"
         srcdoc="check.pdf"
         width="100%" height="100%"></iframe>
 </body>

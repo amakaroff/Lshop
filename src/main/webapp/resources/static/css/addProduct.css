@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    background-color: #efefef;
+}
+
+.content {
+    width: 520px;
+    height: 100%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.input-field {
+    width: 520px;
+    height: 660px;
+    margin-top: 40px;
+    background-color: antiquewhite;
+}
+
+.name {
+    width: 210px;
+    height: 60px;
+    margin: 10px;
+    float: left;
+}
+
+.label {
+    width: 150px;
+    height: 30px;
+    font-family: cursive;
+}
+
+.input-name {
+    width: 210px;
+    height: 30px;
+    font-size: 120%;
+    background-color: bisque;
+}
+
+.price {
+    width: 100px;
+    height: 60px;
+    margin: 10px;
+    float: left;
+}
+
+.input-price {
+    width: 100px;
+    height: 30px;
+    font-size: 120%;
+    background-color: bisque;
+}
+
+.photo {
+    width: 500px;
+    height: 60px;
+    margin: 10px;
+    float: left;
+}
+
+.input-photo {
+    width: 500px;
+    height: 30px;
+    font-size: 120%;
+    background-color: bisque;
+}
+
+.description {
+    width: 500px;
+    height: 330px;
+    margin: 10px;
+    float: left;
+}
+
+.input-description {
+    width: 500px;
+    height: 300px;
+    font-size: 130%;
+    background-color: bisque;
+}
+
+.category {
+    width: 150px;
+    height: 60px;
+    float: left;
+    margin: 10px;
+}
+
+.input-category {
+    width: 150px;
+    height: 30px;
+    font-size: 120%;
+    background-color: bisque;
+}
+
+.add-button {
+    width: 150px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 190px;
+    font-size: 120%;
+    font-family: cursive;
+    background-color: cornflowerblue;
+    border: none;
+    float: left;
+    border-radius: 2px;
+}
+
+.error-label {
+    width: 480px;
+    height: 40px;
+    text-align: center;
+    font-family: cursive;
+    font-size: 130%;
+    line-height: 50px;
+    color: crimson;
+}
+
+.title-label {
+    width: 480px;
+    height: 40px;
+    margin-top: 20px;
+    text-align: center;
+    font-family: cursive;
+    font-size: 170%;
+    line-height: 50px;
+}

@@ -9,11 +9,17 @@ public interface DAO {
 
     ProfileEntity getProfile(String login);
 
+    ProfileEntity getProfile(Long id);
+
     void saveProfile(ProfileEntity profile);
 
-    List<ProductEntity> getProducts();
+    List<ProductEntity> getProducts(String category, boolean doSorted);
 
     ProductEntity findById(Long id);
 
-    List<ProductEntity> findByCategory(String category);
+    void deleteProducts(List<ProductEntity> products);
+
+    List<ProfileEntity> findByProfileId(Long id);
+
+    void saveProduct(ProductEntity product);
 }
